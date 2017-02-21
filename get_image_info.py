@@ -1,7 +1,7 @@
 import StringIO
 import struct
 
-def getImageInfo(datastream):
+def get_image_info(datastream):
 #    datastream = ReseekFile(datastream)
     data = str(datastream.read(30))
     size = len(data)
