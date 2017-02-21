@@ -66,3 +66,17 @@ def getImageInfo(datastream):
             pass
 
     return content_type, width, height
+
+def verify_jpeg(datastream):
+    ENDING = [0xFF, 0xD9]
+    try:
+        datastream.seek(-2, 2)
+    except IOError:
+        return False
+    for e in ENDING:
+        b = datastream.read(1)
+        if ord(b) == e:
+            continue
+        else:
+            return False
+    return True
