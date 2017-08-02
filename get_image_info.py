@@ -3,6 +3,7 @@ import struct
 
 def get_image_info(datastream):
 #    datastream = ReseekFile(datastream)
+    datastream.seek(0)
     data = str(datastream.read(30))
     size = len(data)
     height = -1
